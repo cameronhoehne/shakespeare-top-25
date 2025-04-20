@@ -36,7 +36,10 @@ const handler: Handler = async () => {
         if (hoursSince < 24 && existing?.data) {
             return {
                 statusCode: 200,
-                body: JSON.stringify(existing.data)
+                body: JSON.stringify({
+                    fetchedAt: existing.fetchedAt,
+                    items: existing.data
+                })
             }
         }
 
@@ -75,7 +78,10 @@ const handler: Handler = async () => {
 
         return {
             statusCode: 200,
-            body: JSON.stringify(detailsData.items)
+            body: JSON.stringify({
+                fetchedAt: now.toISOString,
+                items: detailsData.items
+            })
         };
 
     } catch (error: any) {
