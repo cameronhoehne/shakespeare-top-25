@@ -87,7 +87,13 @@ li {
   object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+  .results-container {
+    width: 80%;
+  }
 
+
+}
 
 
 @media (prefers-color-scheme: light) {
