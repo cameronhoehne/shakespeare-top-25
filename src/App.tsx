@@ -86,8 +86,20 @@ function App() {
       <button onClick={() => generateExcel(data)}>
         Download Excel
       </button>
+
+      {(() => {
+        const fetchedAt = data?.fetchedAt;
+
+        return (
+          <p style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
+            Last Updated: {fetchedAt ? new Date(fetchedAt).toLocaleString() : "Unknown"}
+          </p>
+        );
+      })()}
+
+
       <ul className='results-container'>
-        {data.map((video: any) => {
+        {data.items.map((video: any) => {
           const formattedDuration = formatDuration(video.contentDetails.duration);
           const formattedViews = formatViews(video.statistics.viewCount);
           const formattedDate = formatPublishedDate(video.snippet.publishedAt);
