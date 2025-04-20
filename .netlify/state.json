@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Kevil",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "KY",
+				"name": "Kentucky"
+			},
+			"timezone": "America/Chicago",
+			"latitude": 37.0904,
+			"longitude": -88.8741,
+			"postalCode": "42053"
+		},
+		"timestamp": 1745106234198
+	}
+}
