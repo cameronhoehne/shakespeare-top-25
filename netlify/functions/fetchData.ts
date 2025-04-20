@@ -89,3 +89,4 @@ const handler: Handler = async () => {
 }
 
 export { handler };
+export const schedule = "0 0 * * *";
