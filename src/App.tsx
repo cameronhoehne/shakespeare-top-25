@@ -60,8 +60,8 @@ function App() {
     }
   };
 
-  const generateExcel = (data: any[]) => {
-    const reshaped = data.map(item => ({
+  const generateExcel = (data: { items: any[] }) => {
+    const reshaped = data.items.map(item => ({
       'Video Title': item.snippet.title,
       'Views': formatViews(item.statistics.viewCount),
       'Duration': formatDuration(item.contentDetails.duration),
