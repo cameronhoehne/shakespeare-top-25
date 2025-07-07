@@ -109,7 +109,11 @@ function App() {
             <li key={video.id}>
               <div className='image-container'>
                 <a href={`https://www.youtube.com/watch?v=${video.id}`} target='_blank'>
-                  <img src={video.snippet.thumbnails.standard.url} />
+                  <img src={video.snippet.thumbnails?.standard?.url ||
+                    video.snippet.thumbnails?.high?.url ||
+                    video.snippet.thumbnails?.medium?.url ||
+                    video.snippet.thumbnails?.default?.url ||
+                    ""} />
                 </a></div> <br />
               <strong>{video.snippet.title}</strong><br />
               Views: {formattedViews} <br />
